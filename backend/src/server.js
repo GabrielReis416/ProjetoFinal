@@ -1,0 +1,29 @@
+const express = require("express")
+const cors = require("cors")
+
+
+//App
+const app = express()
+
+app.use(cors())
+app.use(express.json())
+
+// Consexão com O banco de Dados 
+const db = require("./config/db")
+
+//Teste Conexão
+db.query("SELECT NOW()", (err,res)=>{
+ if(err){
+  console.log("Erro:", err)
+ }else{
+  console.log("Banco conectado:", res.rows)
+ }
+})
+
+app.get("/", (req, res) => {
+ res.send("API funcionando")
+})
+
+app.listen(3000, () => {
+ console.log("Servidor rodando na porta 3000")
+})
