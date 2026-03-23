@@ -27,3 +27,9 @@ app.get("/", (req, res) => {
 app.listen(3000, () => {
  console.log("Servidor rodando na porta 3000")
 })
+
+// Rotas
+
+const taskRoutes = require("./routes/taskRoutes")
+
+app.use("/api", taskRoutes)
