@@ -33,3 +33,7 @@ app.listen(3000, () => {
 const taskRoutes = require("./routes/taskRoutes")
 
 app.use("/api", taskRoutes)
+
+const authRoutes = require("./routes/authRoutes")
+
+app.use("/api/auth", authRoutes)

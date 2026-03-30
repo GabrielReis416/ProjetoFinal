@@ -1,32 +1,23 @@
 const jwt = require("jsonwebtoken")
 
+function authMiddleware(req, res, next) {
 
-//Validação Token
-module.exports = (req,res,next) => {
+ const authHeader = req.headers.authorization
 
- const token = req.headers.authorization
-
- if(!token){
-  return res.status(401).json({error:"Token necessário"})
+ if(!authHeader){
+  return res.status(401).json({ error: "Token não fornecido" })
  }
 
- try{
+ const token = authHeader.split(" ")[1]
 
-  const decoded = jwt.verify(token,"secret")
+ try {
+  const decoded = jwt.verify(token, "secret")
   req.userId = decoded.id
-
   next()
-
- }catch(err){
-  return res.status(401).json({error:"Token inválido"})
+ } catch (err) {
+  return res.status(401).json({ error: "Token inválido" })
  }
 
 }
 
-// Rotas 
-
-const authMiddleware = require("../middleware/authMiddleware")
-
-router.get("/profile", authMiddleware, (req,res)=>{
-    res.json({message:"Rota protegida"})
-})
+module.exports = authMiddleware
