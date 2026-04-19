@@ -301,7 +301,7 @@ DELETE /api/tasks/:id
 ✔ Sprint 1 - Estrutura inicial
 ✔ Sprint 2 - Backend completo
 ✔ Sprint 3 - Frontend integrado
-
+✔ Sprint 4 - Ultimas correções
 ---
 
 # 👨‍💻 Autor
