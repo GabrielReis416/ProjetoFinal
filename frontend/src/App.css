@@ -1,38 +1,146 @@
-.App {
-  text-align: center;
+body {
+ margin: 0;
+ font-family: Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* container central tipo sistema */
+.app-container {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* card principal */
+.dashboard-box {
+ width: 600px;
+ padding: 20px;
+ border-radius: 12px;
+ box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-.App-header {
-  background-color: #282c34;
+/* topo */
+.header {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin-bottom: 20px;
+}
+
+/* tarefa */
+.task {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 12px;
+ border-radius: 8px;
+ margin-bottom: 10px;
+ box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* botões */
+.actions button {
+ margin-left: 5px;
+}
+
+/* registre */
+
+/* Fundo igual ao da tela de dashboard */
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
+  background-color: #FAFAFA; /* Fundo levemente cinza/gelo */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Card centralizado com cantos arredondados e sombra sutil */
+.register-card {
+  background-color: #FFFFFF;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Título com a cor azul-marinho igual ao "Minhas Tarefas" */
+.register-title {
+  color: #2C3E50;
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.register-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 16px; /* Espaçamento entre os inputs */
+}
+
+/* Inputs estilizados */
+.register-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  box-sizing: border-box; /* Garante que o padding não quebre a largura */
+  transition: border-color 0.2s ease;
+}
+
+.register-input:focus {
+  border-color: #065F64; /* Borda fica da cor do botão ao clicar */
+}
+
+/* Botão com o mesmo tom de verde-azulado da tela principal */
+.register-button {
+  background-color: #065F64;
+  color: #FFFFFF;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.register-button:hover {
+  background-color: #044B4F;
+}
+
+.register-button:active {
+  transform: scale(0.98); /* Efeitinho de clique */
+}
+
+/* login */
+
+/* Texto de rodapé (Não tem uma conta?) */
+.login-footer {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* Link para mudar de página */
+.login-link {
+  color: #065F64;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.login-link:hover {
+  color: #044B4F;
 }
